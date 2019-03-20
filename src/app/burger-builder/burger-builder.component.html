@@ -1,0 +1,38 @@
+
+<h2 style="text-align: center;">Build Your Burger</h2>
+<div class="burger-grid">
+<div class="example-container">
+    <h2>Condiments</h2>
+  
+    <div
+    cdkDropList
+      #optionsList="cdkDropList"
+      [cdkDropListData]="options"
+      [cdkDropListConnectedTo]="[doneList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let item of options" cdkDrag>{{item}}</div>
+    </div>
+   
+  </div>
+  
+  <div class="example-container">
+    <h2>Your Burger</h2>
+  
+    <div
+    cdkDropList
+      #doneList="cdkDropList"
+      [cdkDropListData]="done"
+      [cdkDropListConnectedTo]="[optionsList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+    </div>
+  </div>
+</div>
+<div style="text-align:center;">
+    <button mat-raised-button (click)="finishBurger()" class="finish">Finish</button>
+</div>
+  
+
+  

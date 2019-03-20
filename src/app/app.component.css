@@ -1,0 +1,47 @@
+button{
+     background: white;
+     border-radius: 4px;
+     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+     font-size: 100%;
+}
+mat-list-item{
+    text-align: center;
+    font-weight: bold;
+}
+.desc{
+    color:black;
+    font-size: 75%; 
+    padding-left: 2%;
+    text-shadow: 1px 1px white;
+}
+.wrapper{
+    display:grid;
+    grid-template-columns: 33% 33% 33%;
+    text-align: center;
+}
+html{
+    background-image: url("../assets/background.jpg");
+    background-repeat: no-repeat;
+  background-size: cover;
+}
+h1,h2,h3,h4,h5{
+    color:white; 
+    
+}
+.grid{
+    display:grid;
+    grid-template-columns: 85% 15%;
+}
+.cart{
+    margin-right: 7%;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2%;
+    color:#ff0000; 
+
+}
+.cart h3{
+    color:red; 
+}
+.menu{
+    margin-left:5%;
+}
