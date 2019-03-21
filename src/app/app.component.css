@@ -7,12 +7,16 @@ button{
 mat-list-item{
     text-align: center;
     font-weight: bold;
+    margin-top:5%;
+    margin-bottom:5%; 
 }
 .desc{
     color:black;
     font-size: 75%; 
     padding-left: 2%;
     text-shadow: 1px 1px white;
+    padding-top:3%;
+   padding-bottom:3%; 
 }
 .wrapper{
     display:grid;
@@ -30,7 +34,7 @@ h1,h2,h3,h4,h5{
 }
 .grid{
     display:grid;
-    grid-template-columns: 85% 15%;
+    grid-template-columns: 80% 20%;
 }
 .cart{
     margin-right: 7%;
@@ -44,4 +48,8 @@ h1,h2,h3,h4,h5{
 }
 .menu{
     margin-left:5%;
+}
+.remove{
+background-color:red;
+
 }

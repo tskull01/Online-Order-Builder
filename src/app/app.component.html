@@ -63,10 +63,11 @@
         <mat-list role="list">
           <mat-list-item role="listitem" *ngFor="let item of items">{{ item.name }}
             <p class="desc">{{ item.description }}</p>
+            <button mat-mini-fab class="remove" (click)="removeItem(item)">X</button>
           </mat-list-item>
         </mat-list>
       </div>
-      </div>
+    </div>
 </div>
 <router-outlet></router-outlet>
 </html>

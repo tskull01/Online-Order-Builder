@@ -28,4 +28,7 @@ name:String;
   this.menu = obj['val2'];
   this.addItem(this.name, this.desc); 
   }
+  removeItem(item){
+    this.items.splice(item,1); 
+  }
 }
