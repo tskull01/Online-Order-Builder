@@ -29,6 +29,10 @@ name:String;
   this.addItem(this.name, this.desc); 
   }
   removeItem(item){
-    this.items.splice(item,1); 
+    for(let i = 0; i <= this.items.length; i++){
+      if(item == this.items[i]){
+        this.items.splice(i,1);
+      }
+    } 
   }
 }
