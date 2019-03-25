@@ -13,16 +13,16 @@
           <h2>Burgers</h2>
           <mat-list role="list">
             <mat-list-item role="listitem">
-              <button mat-button (click)="buildBurger('Hamburger')">Hamburger</button>
+              <button mat-button (click)="buildBurger('Hamburger', 9)">Hamburger</button>
             </mat-list-item>
             <mat-list-item role="listitem">
-              <button mat-button (click)="buildBurger('Cheeseburger')">Cheeseburger</button>
+              <button mat-button (click)="buildBurger('Cheeseburger', 10)">Cheeseburger</button>
             </mat-list-item>
             <mat-list-item role="listitem">
-              <button mat-button (click)="buildBurger('Little Hamburger')">Little Hamburger</button>
+              <button mat-button (click)="buildBurger('Little Hamburger', 6)">Little Hamburger</button>
             </mat-list-item>
             <mat-list-item role="listitem">
-              <button mat-button (click)="buildBurger('Little Cheesburger')">Little Cheeseburger</button>
+              <button mat-button (click)="buildBurger('Little Cheesburger', 7)">Little Cheeseburger</button>
             </mat-list-item>
             </mat-list>
           </div>
@@ -30,10 +30,10 @@
           <h2>Fries</h2>
           <mat-list role="list">
             <mat-list-item role="listitem">
-              <button mat-button (click)="addItem('Five Guys Style Fries')" >Five Guys Style</button>
+              <button mat-button (click)="addItem('Five Guys Style Fries', 5)" >Five Guys Style</button>
             </mat-list-item>
             <mat-list-item role="listitem">
-              <button mat-button (click)="addItem('Cajun Style Fries')">Cajun Style</button>
+              <button mat-button (click)="addItem('Cajun Style Fries', 6)">Cajun Style</button>
             </mat-list-item>
           </mat-list>
         </div>
@@ -41,16 +41,16 @@
         <h2>Milkshakes</h2>
         <mat-list role="list">
           <mat-list-item role="listitem">
-            <button mat-button (click)="addItem('Bacon Milkshake')">Bacon</button>
+            <button mat-button (click)="addItem('Bacon Milkshake', 4)">Bacon</button>
           </mat-list-item>
           <mat-list-item role="listitem">
-            <button mat-button (click)="addItem('Cherry Milkshake')">Cherry</button>
+            <button mat-button (click)="addItem('Cherry Milkshake', 4)">Cherry</button>
           </mat-list-item>
           <mat-list-item role="listitem">
-            <button mat-button (click)="addItem('Chocolate Milkshake')">Chocolate</button>
+            <button mat-button (click)="addItem('Chocolate Milkshake', 4)">Chocolate</button>
           </mat-list-item>
           <mat-list-item role="listitem">
-            <button mat-button (click)="addItem('Peanut Butter Milkshake')">Peanut Butter</button>
+            <button mat-button (click)="addItem('Peanut Butter Milkshake', 4)">Peanut Butter</button>
           </mat-list-item>
           </mat-list>
       </div>
@@ -63,10 +63,17 @@
         <mat-list role="list">
           <mat-list-item role="listitem" *ngFor="let item of items">{{ item.name }}
             <p class="desc">{{ item.description }}</p>
-            <button mat-mini-fab class="remove" (click)="removeItem(item)">X</button>
+            <button mat-mini-fab class="remove" (click)="removeItem(item)">x</button>
           </mat-list-item>
         </mat-list>
+        <div class="fifty">
+          <div>
         <button mat-raised-button class="checkout">Proceed to checkout</button>
+      </div>
+      <div style="text-align:end;font-weight: bold; ">
+        <p>${{ total }}.00</p>
+      </div>
+      </div>
       </div>
     </div>
 </div>

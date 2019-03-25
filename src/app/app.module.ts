@@ -4,16 +4,19 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BurgerBuilderComponent } from './burger-builder/burger-builder.component';
+import { CheckoutComponentComponent } from './checkout-component/checkout-component.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatListModule} from '@angular/material/list';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {MatButtonModule} from '@angular/material/button';
+import { RouterModule, Routes } from '@angular/router';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    BurgerBuilderComponent
+    BurgerBuilderComponent,
+    CheckoutComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +24,8 @@ import {MatButtonModule} from '@angular/material/button';
     BrowserAnimationsModule,
     MatListModule,
     DragDropModule,
-    MatButtonModule
+    MatButtonModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

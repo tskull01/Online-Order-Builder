@@ -38,7 +38,7 @@ export class BurgerBuilderComponent {
     this.object = {
       arr:this.done,
       val1: false,
-      val2: true
+      val2: true,
     } 
     this.sendList.emit(this.object); 
   }

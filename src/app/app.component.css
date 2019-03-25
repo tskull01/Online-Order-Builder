@@ -57,3 +57,7 @@ background-color:red;
 color:white;
 background-color: #ff0000; 
 }
+.fifty{
+    display:grid;
+    grid-template-columns: 60% 40%;
+}
