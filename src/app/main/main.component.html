@@ -1,0 +1,74 @@
+<div style="text-align:center;">
+    <h5 *ngIf="menu">Click an item to add to your cart</h5>
+</div>
+<div class="grid">
+    <div *ngIf="menu">
+      <div class="wrapper">
+        <div>
+          <h2>Burgers</h2>
+          <mat-list role="list">
+            <mat-list-item role="listitem">
+              <button mat-button (click)="buildBurger('Hamburger', 9)">Hamburger</button>
+            </mat-list-item>
+            <mat-list-item role="listitem">
+              <button mat-button (click)="buildBurger('Cheeseburger', 10)">Cheeseburger</button>
+            </mat-list-item>
+            <mat-list-item role="listitem">
+              <button mat-button (click)="buildBurger('Little Hamburger', 6)">Little Hamburger</button>
+            </mat-list-item>
+            <mat-list-item role="listitem">
+              <button mat-button (click)="buildBurger('Little Cheesburger', 7)">Little Cheeseburger</button>
+            </mat-list-item>
+            </mat-list>
+          </div>
+        <div>
+          <h2>Fries</h2>
+          <mat-list role="list">
+            <mat-list-item role="listitem">
+              <button mat-button (click)="addItem('Five Guys Style Fries', 5)" >Five Guys Style</button>
+            </mat-list-item>
+            <mat-list-item role="listitem">
+              <button mat-button (click)="addItem('Cajun Style Fries', 6)">Cajun Style</button>
+            </mat-list-item>
+          </mat-list>
+        </div>
+      <div>
+        <h2>Milkshakes</h2>
+        <mat-list role="list">
+          <mat-list-item role="listitem">
+            <button mat-button (click)="addItem('Bacon Milkshake', 4)">Bacon</button>
+          </mat-list-item>
+          <mat-list-item role="listitem">
+            <button mat-button (click)="addItem('Cherry Milkshake', 4)">Cherry</button>
+          </mat-list-item>
+          <mat-list-item role="listitem">
+            <button mat-button (click)="addItem('Chocolate Milkshake', 4)">Chocolate</button>
+          </mat-list-item>
+          <mat-list-item role="listitem">
+            <button mat-button (click)="addItem('Peanut Butter Milkshake', 4)">Peanut Butter</button>
+          </mat-list-item>
+          </mat-list>
+      </div>
+    </div>
+  </div>
+  <app-burger-builder *ngIf="burger" (sendList)="setDescription($event)"></app-burger-builder>
+  <div>
+      <div class="cart">
+        <h3>Your order</h3>
+        <mat-list role="list">
+          <mat-list-item role="listitem" *ngFor="let item of items">{{ item.name }}
+            <p class="desc">{{ item.description }}</p>
+            <button mat-mini-fab class="remove" (click)="removeItem(item)">x</button>
+          </mat-list-item>
+        </mat-list>
+        <div class="fifty">
+          <div>
+        <button mat-raised-button (click)="setMenu(false)"class="checkout" routerLink="/checkout" routerLinkActive="active">Proceed to checkout</button>
+      </div>
+      <div style="text-align:end;font-weight: bold; ">
+        <p>${{ total }}.00</p>
+      </div>
+      </div>
+      </div>
+    </div>
+</div>
