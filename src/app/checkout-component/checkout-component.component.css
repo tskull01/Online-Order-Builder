@@ -7,57 +7,38 @@ button{
 mat-list-item{
    text-align: center;
    font-weight: bold;
-   margin-top:5%;
-   margin-bottom:5%; 
-}
-.desc{
-   color:black;
-   font-size: 75%; 
-   padding-left: 2%;
-   text-shadow: 1px 1px white;
-   padding-top:3%;
-  padding-bottom:3%; 
-}
-.wrapper{
-   display:grid;
-   grid-template-columns: 33% 33% 33%;
-   text-align: center;
+   margin-top:3%;
+   margin-bottom:3%; 
+   border:1px solid black; 
 }
 html{
    background-image: url("../../assets/background.jpg");
    background-repeat: no-repeat;
  background-size: cover;
 }
-h1,h2,h3,h4,h5{
-   color:white; 
-   
-}
+
 .grid{
    display:grid;
-   grid-template-columns: 80% 20%;
+   grid-template-columns: 100%;
+   justify-items: stretch;
+   align-items: stretch;
 }
 .cart{
-   margin-right: 7%;
+   margin-right: 20%;
    background-color: rgba(255, 255, 255, 0.8);
    padding: 2%;
-   color:#ff0000; 
+   margin-left: 20%; 
+   text-align: center;
+}
 
-}
-.cart h3{
-   color:red; 
-}
-.menu{
-   margin-left:5%;
-}
-.remove{
-background-color:red;
-
-}
-.checkout{
-color:white;
-background-color: #ff0000; 
-}
-.fifty{
+.split{
    display:grid;
-   grid-template-columns: 60% 40%;
+   grid-template-columns: 1fr 1fr 1fr;
+   justify-content: space-between;
+}
+.desc{
+   border:1px solid red;
+}
+.price{
+   border: 1px solid blue; 
 }

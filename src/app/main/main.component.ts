@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Item } from '../item'; 
-import { Router } from '@angular/router'
+import { OrderService } from '../order.service';
+
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -15,13 +16,13 @@ export class MainComponent {
   name:String; 
   price:number;
   total:number = 0; 
-  router:String;
-  constructor(private route:Router){
-  this.router = route.url; 
+  constructor(private _orderService: OrderService){
+    this._orderService.receiveData(this.items);
   }
     addItem(name:String, price:number, description?:String){
      this.items.push(new Item(name, price, description));
      this.total += price; 
+     this._orderService.receiveData(this.items); 
     }
     buildBurger(name, price){
     this.burger = true;

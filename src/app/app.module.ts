@@ -10,6 +10,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import {MatButtonModule} from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 import { MainComponent } from './main/main.component';
+import { OrderService } from './order.service';
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import { MainComponent } from './main/main.component';
     MatButtonModule,
     RouterModule
   ],
-  providers: [],
+  providers: [OrderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

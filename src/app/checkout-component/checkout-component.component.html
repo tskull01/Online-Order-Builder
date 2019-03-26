@@ -1,1 +1,15 @@
-<h3 style="text-align: center">Your order summary</h3>
+<h3 style="text-align: center; color:white;">Your order summary</h3>
+<div class="cart">
+  <div class="grid">
+<mat-list role="list">
+        <mat-list-item role="listitem" *ngFor="let item of items">
+          <div class="split">
+           <div><p>{{ item.name }}</p></div>
+           <div><p class="desc">{{ item.description }}</p></div>
+            <div><p class="price">${{ item.price }}.00</p></div>
+          </div>
+        </mat-list-item>
+ </mat-list>
+</div>
+ <h5>Total : ${{ total }}.00</h5>
+</div>
