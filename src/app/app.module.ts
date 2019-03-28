@@ -11,6 +11,13 @@ import {MatButtonModule} from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 import { MainComponent } from './main/main.component';
 import { OrderService } from './order.service';
+import { PickupComponent } from './pickup/pickup.component';
+import { MatRadioModule } from '@angular/material/radio';
+import { FormsModule } from '@angular/forms';
+import { DeliveryComponent } from './delivery/delivery.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input'
 
 
 @NgModule({
@@ -18,7 +25,9 @@ import { OrderService } from './order.service';
     AppComponent,
     BurgerBuilderComponent,
     routingComponents,
-    MainComponent
+    MainComponent,
+    PickupComponent,
+    DeliveryComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +36,12 @@ import { OrderService } from './order.service';
     MatListModule,
     DragDropModule,
     MatButtonModule,
-    RouterModule
+    RouterModule,
+    MatRadioModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule
   ],
   providers: [OrderService],
   bootstrap: [AppComponent]

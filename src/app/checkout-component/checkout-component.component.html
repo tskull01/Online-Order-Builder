@@ -1,3 +1,4 @@
+<html>
 <h3 style="text-align: center; color:white;">Your order summary</h3>
 <div class="cart">
   <div class="grid">
@@ -13,3 +14,12 @@
 </div>
  <h5>Total : ${{ total }}.00</h5>
 </div>
+<div class="order-form">
+    <mat-radio-group [(ngModel)]="value">
+        <mat-radio-button (click)="setShow(true)" [value]="1">Delivery</mat-radio-button>
+        <mat-radio-button (click)="setShow(false)" [value]="2">To Go</mat-radio-button>
+    </mat-radio-group>
+  <app-pickup *ngIf="!show"></app-pickup>
+  <app-delivery *ngIf="show"></app-delivery>
+</div>
+</html>

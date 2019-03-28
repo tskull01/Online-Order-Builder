@@ -1,0 +1,22 @@
+<div class="example-container">
+  <div class="pad">
+    <mat-form-field>
+      <input matInput placeholder="Name">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Address">
+      </mat-form-field>
+      <mat-form-field>
+          <input matInput placeholder="City">
+        </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Select">
+        <mat-option *ngFor="let state of states" value="option">{{state}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Phone Number">
+      </mat-form-field>
+      <button mat-raised-button>Go To Payment</button>
+  </div>
+  </div>
