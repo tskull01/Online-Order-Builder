@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Item } from '../item'; 
+import { OrderService } from '../order.service';
+import { FirestoreService } from '../firestore.service';
 @Component({
   selector: 'app-delivery',
   templateUrl: './delivery.component.html',
@@ -7,6 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeliveryComponent implements OnInit {
 
+  items:Item[]; 
+  name:string = '';
+  phone:string = '';
+  address:string = ''; 
   states:string[] = [
    'Alabama',
 'Alaska',
@@ -61,9 +67,21 @@ export class DeliveryComponent implements OnInit {
     
   ];
 
-  constructor() { }
-
+  constructor(private _orderService: OrderService, private _firestoreService: FirestoreService) {
+    this._orderService.myMethod$.subscribe((data) =>{
+      this.items = data;  
+    });
+  
+ }
   ngOnInit() {
+    this.items = this._orderService.getData(); 
+    console.log(this.items);
   }
-
+sendOrder(){
+  if(this.address != '' && this.name != '' && this.phone != '' ){
+this._firestoreService.logOrder(this.items,this.address,this.name,this.phone); 
+  } else {
+    alert("Please complete the form")
+  }
+}
 }

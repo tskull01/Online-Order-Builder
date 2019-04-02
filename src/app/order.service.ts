@@ -18,9 +18,16 @@ export class OrderService {
     console.log(items); 
       this.items = items;
       this.myMethodSubject.next(this.items);
-      console.log(this.items); 
+      this.prepareItems(this.items); 
   }
   getData(){
     return this.items; 
+  }
+  prepareItems(items){
+    items.forEach(element => {
+      if(element.description == undefined){
+        element.description = ''; 
+      }
+    });
   }
 }
