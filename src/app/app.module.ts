@@ -21,6 +21,7 @@ import { MatInputModule } from '@angular/material/input';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
+import { PickupService } from './pickup/pickup.service';
 
 
 
@@ -50,7 +51,7 @@ import { environment } from '../environments/environment';
     AngularFirestoreModule
   
   ],
-  providers: [OrderService],
+  providers: [OrderService, PickupService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

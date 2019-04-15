@@ -4,4 +4,13 @@
     <input matInput placeholder="Zipcode">
   </mat-form-field>
   <button mat-raised-button style="margin-left:1%;">Search local Five Guys</button>
+<div>
+  <ul>
+    <li *ngFor="let store of stores">
+        <p>{{store.location}}</p>
+        <p>{{store.address}}</p>
+        <p>{{store.zipcode}}</p>
+    </li>
+  </ul>
+</div>
 </div>
